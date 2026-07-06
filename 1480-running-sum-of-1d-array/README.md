@@ -1,33 +1,103 @@
-<h2><a href="https://leetcode.com/problems/running-sum-of-1d-array">1603. Running Sum of 1d Array</a></h2><h3>Easy</h3><hr><p>Given an array <code>nums</code>. We define a running sum of an array as&nbsp;<code>runningSum[i] = sum(nums[0]&hellip;nums[i])</code>.</p>
+# LeetCode 1480 - Running Sum of 1D Array
 
-<p>Return the running sum of <code>nums</code>.</p>
+## Problem
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Given an integer array `nums`, return the running sum of the array.
 
-<pre>
-<strong>Input:</strong> nums = [1,2,3,4]
-<strong>Output:</strong> [1,3,6,10]
-<strong>Explanation:</strong> Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].</pre>
+The running sum at index `i` is the sum of all elements from index `0` to index `i`.
 
-<p><strong class="example">Example 2:</strong></p>
+Formula:
 
-<pre>
-<strong>Input:</strong> nums = [1,1,1,1,1]
-<strong>Output:</strong> [1,2,3,4,5]
-<strong>Explanation:</strong> Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1].</pre>
+runningSum[i] = nums[0] + nums[1] + ... + nums[i]
 
-<p><strong class="example">Example 3:</strong></p>
+---
 
-<pre>
-<strong>Input:</strong> nums = [3,1,2,10,1]
-<strong>Output:</strong> [3,4,6,16,17]
-</pre>
+## Pattern Used
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+- Single Traversal
+- Running Sum (Prefix Sum)
 
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
-	<li><code>-10^6&nbsp;&lt;= nums[i] &lt;=&nbsp;10^6</code></li>
-</ul>
+---
+
+## Algorithm
+
+1. Create an empty array `new` to store the running sums.
+2. Create a variable `running` and initialize it to `0`.
+3. Traverse the array.
+4. Add the current element to `running`.
+5. Append the updated `running` value to the new array.
+6. After the traversal is complete, return the new array.
+
+---
+
+## Dry Run
+
+Input:
+
+nums = [1,2,3,4]
+
+Initially
+
+running = 0
+
+new = []
+
+---
+
+Read 1
+
+running = 1
+
+new = [1]
+
+---
+
+Read 2
+
+running = 3
+
+new = [1,3]
+
+---
+
+Read 3
+
+running = 6
+
+new = [1,3,6]
+
+---
+
+Read 4
+
+running = 10
+
+new = [1,3,6,10]
+
+Return
+
+[1,3,6,10]
+
+---
+
+## Time Complexity
+
+O(n)
+
+The array is traversed only once.
+
+---
+
+## Space Complexity
+
+O(n)
+
+A new array is created to store the running sums.
+
+---
+
+## Key Learning
+
+- Running sum keeps a cumulative total while traversing the array.
+- Instead of calculating the sum from the beginning every time, reuse the previous sum.
+- This is one of the simplest applications of the Prefix Sum pattern.
