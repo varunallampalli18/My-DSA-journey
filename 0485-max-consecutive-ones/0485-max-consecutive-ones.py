@@ -1,16 +1,29 @@
 class Solution(object):
     def findMaxConsecutiveOnes(self, nums):
-        current=0
-        highest=0
+
+        # Stores the current streak of consecutive 1's.
+        current = 0
+
+        # Stores the maximum streak found so far.
+        highest = 0
+
+        # Traverse every element in the array.
         for i in nums:
-            if i==1:
-                current+=1
-            if current>highest:
-                highest=current
-            elif i==0:
-                current=0
+
+            # If the current element is 1,
+            # increase the current streak.
+            if i == 1:
+                current += 1
+
+                # Update the maximum streak if needed.
+                if current > highest:
+                    highest = current
+
+            # If the current element is 0,
+            # the streak is broken.
+            else:
+                current = 0
+
+        # Return the longest consecutive streak.
         return highest
-sol=Solution()
-result=sol.findMaxConsecutiveOnes([1,1,0,1,1,1])
-print(result)
         
