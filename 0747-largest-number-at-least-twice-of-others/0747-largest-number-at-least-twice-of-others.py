@@ -1,17 +1,36 @@
 class Solution(object):
     def dominantIndex(self, nums):
-        largest=float('-inf')
-        indexlarg=0
+
+        # Stores the largest value found so far.
+        largest = float('-inf')
+
+        # Stores the index of the largest value.
+        largestIndex = 0
+
+        # ----------------------------
+        # First Traversal
+        # Find the largest element and its index.
+        # ----------------------------
         for i in range(len(nums)):
-            if nums[i]>largest:
-                largest=nums[i]
-                indexlarg=i
+            if nums[i] > largest:
+                largest = nums[i]
+                largestIndex = i
+
+        # ----------------------------
+        # Second Traversal
+        # Verify whether the largest element
+        # is at least twice every other element.
+        # ----------------------------
         for i in range(len(nums)):
-            if i==indexlarg:
+
+            # Skip the largest element itself.
+            if i == largestIndex:
                 continue
-            if largest<2*nums[i]:
+
+            # If any element violates the condition,
+            # immediately return -1.
+            if largest < 2 * nums[i]:
                 return -1
-        return indexlarg
-sol=Solution()
-result=sol.dominantIndex([3,6,1,0])
-print(result)
+
+        # All elements satisfied the condition.
+        return largestIndex
