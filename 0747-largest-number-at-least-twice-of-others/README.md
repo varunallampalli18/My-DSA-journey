@@ -1,31 +1,155 @@
-<h2><a href="https://leetcode.com/problems/largest-number-at-least-twice-of-others">748. Largest Number At Least Twice of Others</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> where the largest integer is <strong>unique</strong>.</p>
+# LeetCode 747 - Largest Number At Least Twice of Others
 
-<p>Determine whether the largest element in the array is <strong>at least twice</strong> as much as every other number in the array. If it is, return <em>the <strong>index</strong> of the largest element, or return </em><code>-1</code><em> otherwise</em>.</p>
+## Problem
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Given an integer array `nums` where the largest element is unique, determine whether the largest element is at least twice as large as every other element.
 
-<pre>
-<strong>Input:</strong> nums = [3,6,1,0]
-<strong>Output:</strong> 1
-<strong>Explanation:</strong> 6 is the largest integer.
-For every other number in the array x, 6 is at least twice as big as x.
-The index of value 6 is 1, so we return 1.
-</pre>
+- If the condition is true, return the index of the largest element.
+- Otherwise, return `-1`.
 
-<p><strong class="example">Example 2:</strong></p>
+---
 
-<pre>
-<strong>Input:</strong> nums = [1,2,3,4]
-<strong>Output:</strong> -1
-<strong>Explanation:</strong> 4 is less than twice the value of 3, so we return -1.
-</pre>
+## Pattern Used
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+- Single Traversal
+- Maximum Element
+- Verification
 
-<ul>
-	<li><code>2 &lt;= nums.length &lt;= 50</code></li>
-	<li><code>0 &lt;= nums[i] &lt;= 100</code></li>
-	<li>The largest element in <code>nums</code> is unique.</li>
-</ul>
+---
+
+## Algorithm
+
+### Phase 1: Find the Largest Element
+
+1. Create two variables:
+   - `largest` → stores the largest value.
+   - `largestIndex` → stores the index of the largest value.
+2. Traverse the array.
+3. If the current element is greater than `largest`:
+   - Update `largest`.
+   - Update `largestIndex`.
+
+---
+
+### Phase 2: Verify the Condition
+
+1. Traverse the array again.
+2. Skip the largest element itself.
+3. Check whether:
+
+largest >= 2 × current element
+
+4. If the condition fails for any element:
+   - Return `-1`.
+5. If the loop finishes successfully:
+   - Return `largestIndex`.
+
+---
+
+## Dry Run
+
+Input:
+
+nums = [3,6,1,0]
+
+### First Traversal
+
+largest = 6
+
+largestIndex = 1
+
+---
+
+### Second Traversal
+
+Current = 3
+
+6 >= 2 × 3
+
+6 >= 6
+
+True
+
+---
+
+Current = 6
+
+Skip
+
+---
+
+Current = 1
+
+6 >= 2 × 1
+
+6 >= 2
+
+True
+
+---
+
+Current = 0
+
+6 >= 2 × 0
+
+6 >= 0
+
+True
+
+All comparisons passed.
+
+Return
+
+1
+
+---
+
+## Another Example
+
+Input:
+
+nums = [1,2,3,4]
+
+Largest = 4
+
+Check:
+
+4 >= 2 × 1 ✔
+
+4 >= 2 × 2 ✔
+
+4 >= 2 × 3 ✘
+
+Return
+
+-1
+
+---
+
+## Time Complexity
+
+O(n)
+
+- First traversal finds the largest element.
+- Second traversal verifies the condition.
+
+Overall:
+
+O(2n) = O(n)
+
+---
+
+## Space Complexity
+
+O(1)
+
+Only two extra variables are used.
+
+---
+
+## Key Learning
+
+- Use one traversal to collect information.
+- Use another traversal to verify a condition.
+- Use `continue` to skip unnecessary comparisons.
+- Use **early return** when a condition fails.
