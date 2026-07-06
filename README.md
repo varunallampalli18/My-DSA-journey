@@ -10,6 +10,7 @@
 |  |
 | ------- |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/varunallampalli18/My-DSA-journey/tree/master/0026-remove-duplicates-from-sorted-array) |
+| [0747-largest-number-at-least-twice-of-others](https://github.com/varunallampalli18/My-DSA-journey/tree/master/0747-largest-number-at-least-twice-of-others) |
 | [1295-find-numbers-with-even-number-of-digits](https://github.com/varunallampalli18/My-DSA-journey/tree/master/1295-find-numbers-with-even-number-of-digits) |
 | [1480-running-sum-of-1d-array](https://github.com/varunallampalli18/My-DSA-journey/tree/master/1480-running-sum-of-1d-array) |
 | [1929-concatenation-of-array](https://github.com/varunallampalli18/My-DSA-journey/tree/master/1929-concatenation-of-array) |
@@ -25,4 +26,8 @@
 |  |
 | ------- |
 | [1929-concatenation-of-array](https://github.com/varunallampalli18/My-DSA-journey/tree/master/1929-concatenation-of-array) |
+## Sorting
+|  |
+| ------- |
+| [0747-largest-number-at-least-twice-of-others](https://github.com/varunallampalli18/My-DSA-journey/tree/master/0747-largest-number-at-least-twice-of-others) |
 <!---LeetCode Topics End-->
