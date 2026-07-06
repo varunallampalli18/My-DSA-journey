@@ -1,25 +1,110 @@
-<h2><a href="https://leetcode.com/problems/max-consecutive-ones">485. Max Consecutive Ones</a></h2><h3>Easy</h3><hr><p>Given a binary array <code>nums</code>, return <em>the maximum number of consecutive </em><code>1</code><em>&#39;s in the array</em>.</p>
+# LeetCode 485 - Max Consecutive Ones
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+## Problem
 
-<pre>
-<strong>Input:</strong> nums = [1,1,0,1,1,1]
-<strong>Output:</strong> 3
-<strong>Explanation:</strong> The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.
-</pre>
+Given a binary array `nums`, return the maximum number of consecutive `1`s in the array.
 
-<p><strong class="example">Example 2:</strong></p>
+---
 
-<pre>
-<strong>Input:</strong> nums = [1,0,1,1,0,1]
-<strong>Output:</strong> 2
-</pre>
+## Pattern Used
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+- Single Traversal
+- Counting
+- Running Maximum
 
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>nums[i]</code> is either <code>0</code> or <code>1</code>.</li>
-</ul>
+---
+
+## Algorithm
+
+1. Create two variables:
+   - `current` → stores the current streak of consecutive `1`s.
+   - `highest` → stores the longest streak found so far.
+2. Traverse the array.
+3. If the current element is `1`:
+   - Increase `current` by `1`.
+   - If `current` is greater than `highest`, update `highest`.
+4. If the current element is `0`:
+   - Reset `current` to `0`.
+5. Return `highest`.
+
+---
+
+## Dry Run
+
+Input:
+
+nums = [1,1,0,1,1,1]
+
+Initially
+
+current = 0
+
+highest = 0
+
+---
+
+Read 1
+
+current = 1
+
+highest = 1
+
+---
+
+Read 1
+
+current = 2
+
+highest = 2
+
+---
+
+Read 0
+
+current = 0
+
+highest = 2
+
+---
+
+Read 1
+
+current = 1
+
+highest = 2
+
+---
+
+Read 1
+
+current = 2
+
+highest = 2
+
+---
+
+Read 1
+
+current = 3
+
+highest = 3
+
+Return
+
+3
+
+---
+
+## Time Complexity
+
+O(n)
+
+The array is traversed only once.
+
+---
+
+## Space Complexity
+
+O(1)
+
+Only two variables are used.
