@@ -1,18 +1,34 @@
 class Solution(object):
     def findNumbers(self, nums):
-        
-        evencount=0
+
+        # Stores the number of integers
+        # having an even number of digits.
+        evenCount = 0
+
+        # Traverse every number in the array.
         for i in nums:
-            count=0
-            while i>0:
-                digit=i%10
-                count+=1
-                i=i//10
-            if count%2==0:
-                evencount+=1
-        return evencount
-sol=Solution()
-result=sol.findNumbers([12,345,2,6,7896])
-print(result)
-                
-        
+
+            # Counts the digits of the current number.
+            count = 0
+
+            # Count digits by repeatedly removing
+            # the last digit.
+            while i > 0:
+
+                # Extract the last digit.
+                digit = i % 10
+
+                # Increase the digit count.
+                count += 1
+
+                # Remove the last digit.
+                i = i // 10
+
+            # If the digit count is even,
+            # increase the answer.
+            if count % 2 == 0:
+                evenCount += 1
+
+        # Return the number of integers
+        # having an even number of digits.
+        return evenCount
