@@ -1,45 +1,161 @@
-<h2><a href="https://leetcode.com/problems/kids-with-the-greatest-number-of-candies">1528. Kids With the Greatest Number of Candies</a></h2><h3>Easy</h3><hr><p>There are <code>n</code> kids with candies. You are given an integer array <code>candies</code>, where each <code>candies[i]</code> represents the number of candies the <code>i<sup>th</sup></code> kid has, and an integer <code>extraCandies</code>, denoting the number of extra candies that you have.</p>
+# LeetCode 1431 - Kids With the Greatest Number of Candies
 
-<p>Return <em>a boolean array </em><code>result</code><em> of length </em><code>n</code><em>, where </em><code>result[i]</code><em> is </em><code>true</code><em> if, after giving the </em><code>i<sup>th</sup></code><em> kid all the </em><code>extraCandies</code><em>, they will have the <strong>greatest</strong> number of candies among all the kids</em><em>, or </em><code>false</code><em> otherwise</em>.</p>
+## Problem
 
-<p>Note that <strong>multiple</strong> kids can have the <strong>greatest</strong> number of candies.</p>
+There are `n` kids, and each kid has a certain number of candies.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+You are given:
+- An array `candies`, where `candies[i]` is the number of candies the `iᵗʰ` kid has.
+- An integer `extraCandies`.
 
-<pre>
-<strong>Input:</strong> candies = [2,3,5,1,3], extraCandies = 3
-<strong>Output:</strong> [true,true,true,false,true] 
-<strong>Explanation:</strong> If you give all extraCandies to:
-- Kid 1, they will have 2 + 3 = 5 candies, which is the greatest among the kids.
-- Kid 2, they will have 3 + 3 = 6 candies, which is the greatest among the kids.
-- Kid 3, they will have 5 + 3 = 8 candies, which is the greatest among the kids.
-- Kid 4, they will have 1 + 3 = 4 candies, which is not the greatest among the kids.
-- Kid 5, they will have 3 + 3 = 6 candies, which is the greatest among the kids.
-</pre>
+For each kid, determine whether giving **all** the extra candies to that kid would make them have the greatest number of candies among all kids.
 
-<p><strong class="example">Example 2:</strong></p>
+Return a boolean array where:
+- `True` → The kid can have the greatest number of candies.
+- `False` → The kid cannot have the greatest number of candies.
 
-<pre>
-<strong>Input:</strong> candies = [4,2,1,1,2], extraCandies = 1
-<strong>Output:</strong> [true,false,false,false,false] 
-<strong>Explanation:</strong> There is only 1 extra candy.
-Kid 1 will always have the greatest number of candies, even if a different kid is given the extra candy.
-</pre>
+---
 
-<p><strong class="example">Example 3:</strong></p>
+## Pattern Used
 
-<pre>
-<strong>Input:</strong> candies = [12,1,12], extraCandies = 10
-<strong>Output:</strong> [true,false,true]
-</pre>
+- Single Traversal
+- Maximum Element
+- Comparison
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+---
 
-<ul>
-	<li><code>n == candies.length</code></li>
-	<li><code>2 &lt;= n &lt;= 100</code></li>
-	<li><code>1 &lt;= candies[i] &lt;= 100</code></li>
-	<li><code>1 &lt;= extraCandies &lt;= 50</code></li>
-</ul>
+## Algorithm
+
+### Phase 1: Find the Maximum Number of Candies
+
+1. Create a variable `largest`.
+2. Traverse the `candies` array.
+3. Update `largest` whenever a greater value is found.
+
+---
+
+### Phase 2: Check Every Kid
+
+1. Create an empty boolean array `result`.
+2. Traverse the array again.
+3. For every kid:
+   - Calculate
+
+     current = candies[i] + extraCandies
+
+   - If
+
+     current >= largest
+
+     append `True`.
+
+   - Otherwise append `False`.
+
+4. Return the `result` array.
+
+---
+
+## Dry Run
+
+Input
+
+candies = [2,3,5,1,3]
+
+extraCandies = 3
+
+Largest = 5
+
+---
+
+Kid 1
+
+2 + 3 = 5
+
+5 >= 5
+
+Append
+
+True
+
+---
+
+Kid 2
+
+3 + 3 = 6
+
+6 >= 5
+
+Append
+
+True
+
+---
+
+Kid 3
+
+5 + 3 = 8
+
+8 >= 5
+
+Append
+
+True
+
+---
+
+Kid 4
+
+1 + 3 = 4
+
+4 >= 5
+
+Append
+
+False
+
+---
+
+Kid 5
+
+3 + 3 = 6
+
+6 >= 5
+
+Append
+
+True
+
+Return
+
+[True, True, True, False, True]
+
+---
+
+## Time Complexity
+
+O(n)
+
+- First traversal finds the largest value.
+- Second traversal checks every kid.
+
+Overall:
+
+O(2n) = O(n)
+
+---
+
+## Space Complexity
+
+O(n)
+
+A new boolean array is created to store the answer.
+
+---
+
+## Key Learning
+
+- Sometimes solving a problem is easier by breaking it into two phases:
+  1. Collect information (find the maximum).
+  2. Use that information to solve the problem.
+- A temporary variable (`current`) lets us calculate a value without modifying the original array.
+- Return a result only after processing every element.
