@@ -9,6 +9,7 @@
 ## Array
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/varunallampalli18/My-DSA-journey/tree/master/0001-two-sum) |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/varunallampalli18/My-DSA-journey/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0217-contains-duplicate](https://github.com/varunallampalli18/My-DSA-journey/tree/master/0217-contains-duplicate) |
 | [0747-largest-number-at-least-twice-of-others](https://github.com/varunallampalli18/My-DSA-journey/tree/master/0747-largest-number-at-least-twice-of-others) |
@@ -44,5 +45,6 @@
 ## Hash Table
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/varunallampalli18/My-DSA-journey/tree/master/0001-two-sum) |
 | [0217-contains-duplicate](https://github.com/varunallampalli18/My-DSA-journey/tree/master/0217-contains-duplicate) |
 <!---LeetCode Topics End-->
